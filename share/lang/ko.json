@@ -283,7 +283,12 @@
       "_": "기타",
       "powerdrain": ["P.drn", "Powerdrain"],
       "powerheal": ["변환", "자원 변환"],
-      "death": ["사망", "데스카운트"]
+      "death": ["<i class='fas fa-skull-crossbones'></i>", "데스카운트"],
+      "medicated": ["<i class='fas fa-flask'></i>", "Medicatedcount"],
+      "rdps": ["rDPS", "Simulated FFLogs rDPS"],
+      "adps": ["aDPS", "Simulated FFLogs aDPS"],
+      "rperf": ["P%", "Simulated FFLogs rDPS Parse %"],
+      "aperf": ["P%", "Simulated FFLogs aDPS Parse %"]
     }
   },
   "zone": {

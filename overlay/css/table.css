@@ -59,6 +59,11 @@
 .flex-column-etc-powerdrain     { width: var(--_etc-powerdrain)rem; }
 .flex-column-etc-death          { width: var(--_etc-death)rem; }
 .flex-column-etc-powerheal      { width: var(--_etc-powerheal)rem; }
+.flex-column-etc-medicated      { width: var(--_etc-medicated)rem; }
+.flex-column-etc-rdps           { width: var(--_etc-rdps)rem; }
+.flex-column-etc-adps           { width: var(--_etc-adps)rem; }
+.flex-column-etc-rperf          { width: var(--_etc-rperf)rem; }
+.flex-column-etc-aperf          { width: var(--_etc-aperf)rem; }
 
 .pet-merged .flex-column-i-owner {
   display: none !important;
@@ -380,4 +385,25 @@ body.smaller-lower-numbers .footer-stat small.with-larger-digits {
   background: none;
   width: 100%;
   margin: 0;
+}
+
+/* ToolTip */
+.tooltip-content {
+  position: relative;
+  left: 0px;
+  top: 0px;
+
+  color: var(--dropdown-fg);
+  font-size: 0.75em;
+
+  background-color: var(--dropdown-bg);
+  /* border: #000000 solid 1px; */
+  padding: 5px 10px;
+
+  text-shadow: var(--shadow-text);
+  box-shadow: 0 -0.25rem 0 rgba(0, 0, 0, 0.01), var(--shadow-card);
+}
+.tooltip-shadow {
+  position: absolute;
+  /* background-color: #000000; */
 }

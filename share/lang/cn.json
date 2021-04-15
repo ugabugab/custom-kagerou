@@ -283,7 +283,12 @@
       "_": "其他",
       "powerdrain": ["被吸蓝", "魔力被吸收量"],
       "powerheal": ["回蓝", "魔力吸收量（醒神、河流不算）"],
-      "death": ["死", "死亡次数"]
+      "death": ["<i class='fas fa-skull-crossbones'></i>", "死亡次数"],
+      "medicated": ["<i class='fas fa-flask'></i>", "Medicatedcount"],
+      "rdps": ["rDPS", "Simulated FFLogs rDPS"],
+      "adps": ["aDPS", "Simulated FFLogs aDPS"],
+      "rperf": ["P%", "Simulated FFLogs rDPS Parse %"],
+      "aperf": ["P%", "Simulated FFLogs aDPS Parse %"]
     }
   },
   "zone": {

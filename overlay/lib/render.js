@@ -222,6 +222,7 @@
       let text = ''
       let classes = `flex-column flex-column-${sanitize(c)}`
       let locale
+      let tip = ''
 
       if(!data) {
         locale = `col.${c}.0`
@@ -240,11 +241,26 @@
         if(text == 0 || text === '0%' || text === '---') {
           classes += ' zero'
         }
+
+        if(c === 'etc.rdps') {
+          tip = data['rDPSPortions']
+          tip = tip !== '' ? tip.split(' | ').join('\r\n') : 'N/A'
+        }
+        else if(c === 'etc.adps') {
+          tip = data['aDPSPortions']
+          tip = tip !== '' ? tip.split(' | ').join('\r\n') : 'N/A'
+        }
       }
 
       el.innerHTML = text
       el.className = classes
       if(locale) el.setAttribute('data-locale', locale)
+      if(tip !== '') {
+        el.setAttribute('tooltip', tip)
+        el.onmouseover = function() {
+          window.ToolTip.schedule(el, null)
+        }
+      }
 
       return el
     }
@@ -278,7 +294,65 @@
 
   }
 
+  class ToolTip {
+
+    constructor() {
+      this.DELAY = 300
+      this.OFFSET = 5
+
+      this.content = document.createElement('div');
+      this.content.className = 'tooltip-content';
+      this.shadow = document.createElement('div');
+      this.shadow.className = 'tooltip-shadow';
+      this.shadow.appendChild(this.content);
+    }
+
+    show(text, x, y) {
+      this.content.innerText = text
+      this.shadow.style.left = x + 'px'
+      this.shadow.style.top = y + 'px'
+      this.shadow.style.visibility = 'visible'
+      if (this.shadow.parentNode != document.body) {
+          document.body.appendChild(this.shadow)
+      }
+    }
+
+    hide() {
+      this.shadow.style.visibility = 'hidden'
+    }
+    
+    schedule(targetElement, event) {
+      var e = event || window.event;
+      var x = e.clientX;
+      var y = e.clientY;
+      x += window.pageXOffset || document.documentElement.scrollLeft;
+      y += window.pageYOffset || document.documentElement.scrollTop;
+      var _this = this;
+      var timerID = window.setTimeout(function() {
+        var text = targetElement.getAttribute('tooltip');
+        _this.show(text, x + _this.OFFSET, y + _this.OFFSET);
+      }, _this.DELAY);
+
+      function MouseOut()　{
+          _this.hide()
+          window.clearTimeout(timerID)
+          if (targetElement.removeEventListener) {
+              targetElement.removeEventListener('mouseout', MouseOut, false)
+          } else {
+              targetElement.detachEvent('onmouseout', MouseOut)
+          }
+      }
+
+      if (targetElement.addEventListener) {
+          targetElement.addEventListener('mouseout', MouseOut, false)
+      }　else　 {
+          targetElement.attachEvent('onmouseout', MouseOut)
+      }
+    }
+  }
+
   window.Renderer = Renderer
   window.Row = Row
+  window.ToolTip = new ToolTip()
 
 })()

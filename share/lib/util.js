@@ -202,3 +202,14 @@ class EventEmitter {
     }
   }
 }
+
+const pColor = function pColor(perf) {
+  const p = (typeof perf === 'number') ? perf : 0
+  if(p >= 100) return "#E5CC80"
+  else if(p >= 99) return "#E268A8"
+  else if(p >= 95) return "#FF8000"
+  else if(p >= 75) return "#B47BFF"
+  else if(p >= 50) return "#00a0FF"
+  else if (p >= 25) return "#1EFF00"
+  return "#CCCCCC"
+}

@@ -283,7 +283,12 @@
       "_": "その他",
       "powerdrain": ["P.drn", "被吸収量"],
       "powerheal": ["変換", "吸収量"],
-      "death": ["死", "死亡回数"]
+      "death": ["<i class='fas fa-skull-crossbones'></i>", "死亡回数"],
+      "medicated": ["<i class='fas fa-flask'></i>", "Medicatedcount"],
+      "rdps": ["rDPS", "Simulated FFLogs rDPS"],
+      "adps": ["aDPS", "Simulated FFLogs aDPS"],
+      "rperf": ["P%", "Simulated FFLogs rDPS Parse %"],
+      "aperf": ["P%", "Simulated FFLogs aDPS Parse %"]
     }
   },
   "zone": {

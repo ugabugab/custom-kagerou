@@ -283,7 +283,12 @@
       "_": "Etc",
       "powerdrain": ["PDrn", "Powerdrain"],
       "powerheal": ["PHeal", "Powerheal"],
-      "death": ["Tode", "Anzahl der Tode"]
+      "death": ["<i class='fas fa-skull-crossbones'></i>", "Anzahl der Tode"],
+      "medicated": ["<i class='fas fa-flask'></i>", "Medicatedcount"],
+      "rdps": ["rDPS", "Simulated FFLogs rDPS"],
+      "adps": ["aDPS", "Simulated FFLogs aDPS"],
+      "rperf": ["P%", "Simulated FFLogs rDPS Parse %"],
+      "aperf": ["P%", "Simulated FFLogs aDPS Parse %"]
     }
   },
   "zone": {

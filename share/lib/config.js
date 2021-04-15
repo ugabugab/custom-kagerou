@@ -35,18 +35,40 @@ const CONFIG_DEFAULT = {
   },
   tabs: [
     {
-      id: 0,
-      label: 'DPS',
+      id: 4,
+      label: 'rDPS',
       width: 1,
       sort: 'deal.total',
       col: [
+        'etc.rperf',
         'i.icon',
         'i.name',
         'deal.pct',
         'deal.per_second',
+        'etc.rdps',
         'deal.critical',
         'deal.direct',
-        'deal.crit_direct'
+        'deal.crit_direct',
+        'etc.medicated',
+        'etc.death'
+      ]
+    }, {
+      id: 5,
+      label: 'aDPS',
+      width: 1,
+      sort: 'deal.total',
+      col: [
+        'etc.aperf',
+        'i.icon',
+        'i.name',
+        'deal.pct',
+        'deal.per_second',
+        'etc.adps',
+        'deal.critical',
+        'deal.direct',
+        'deal.crit_direct',
+        'etc.medicated',
+        'etc.death'
       ]
     }, {
       id: 1,
@@ -129,7 +151,12 @@ const CONFIG_DEFAULT = {
     '_heal-maxskill': 4,
     '_etc-powerdrain': 4,
     '_etc-powerheal': 4,
-    '_etc-death': 2
+    '_etc-death':  1.5,
+    '_etc-medicated': 1.5,
+    '_etc-rdps': 3.5,
+    '_etc-adps': 3.5,
+    '_etc-aperf': 1.5,
+    '_etc-rperf': 1.5,
   },
   color: {
     'gauge-default': '#444',
@@ -521,7 +548,40 @@ const COLUMN_INDEX = {
   etc: {
     powerdrain: 'powerdrain',
     powerheal: 'powerheal',
-    death: 'deaths'
+    death: 'deaths',
+    medicated: 'MedicatedCount',
+    rdps: {
+      v: 'rdps',
+      f: (_, conf) => {
+        _ = pFloat(_)
+        if(isNaN(_)) return '---'
+        return formatDps(_, +conf.format.significant_digit.dps)
+      }
+    },
+    adps: {
+      v: 'adps',
+      f: (_, conf) => {
+        _ = pFloat(_)
+        if(isNaN(_)) return '---'
+        return formatDps(_, +conf.format.significant_digit.dps)
+      }
+    },
+    rperf: {
+      v: 'rPerf',
+      f: (_, conf) => {
+        _ = parseInt(_)
+        if(isNaN(_)) return '-'
+        return '<span style="color:' + pColor(_) + ';">' + _ + "</span>"
+      }
+    },
+    aperf: {
+      v: 'aPerf',
+      f: (_, conf) => {
+        _ = parseInt(_)
+        if(isNaN(_)) return '-'
+        return '<span style="color:' + pColor(_) + ';">' + _ + "</span>"
+      }
+    }
   }
 }
 
