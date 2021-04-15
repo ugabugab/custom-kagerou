@@ -4,6 +4,8 @@ const VERSION = '0.8.5'
 const CODENAME = 'phantasmagoria'
 const DESCRIPTION = '長き道夫振り返り　小さな光へ歩き出す'
 
+const CUSTOM_VERSION = 'c1'
+
 const CONFIG_DEFAULT = {
   lang: 'ko',
   style: {

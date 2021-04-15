@@ -23,18 +23,18 @@ try {
     <script>
 'use strict'
 
-Raven && Raven.config('https://77d763feffdf45daa9a75517878489cd@s.hibiya.moe/2', {
-  // to who plays with forked source:
-  // please do *not* report your error to me. do NOT edit this, or simply
-  // remove raven-related codes.
-  whitelistUrls: [/hibiyasleep\.github\.io/, /kagerou\.hibiya\.moe/, /idyllshi.re/],
-  dataCallback: function(data) {
-    if(window.hist && window.hist.currentData) {
-      data.extra.currentData = JSON.stringify(window.hist.currentData)
-    }
-    return data
-  }
-}).install()
+// Raven && Raven.config('https://77d763feffdf45daa9a75517878489cd@s.hibiya.moe/2', {
+//   // to who plays with forked source:
+//   // please do *not* report your error to me. do NOT edit this, or simply
+//   // remove raven-related codes.
+//   whitelistUrls: [/hibiyasleep\.github\.io/, /kagerou\.hibiya\.moe/, /idyllshi.re/],
+//   dataCallback: function(data) {
+//     if(window.hist && window.hist.currentData) {
+//       data.extra.currentData = JSON.stringify(window.hist.currentData)
+//     }
+//     return data
+//   }
+// }).install()
 
     </script>
     <script src="../share/lib/util.js?v=Fireworks-In-The-Summer-End"></script>
@@ -297,13 +297,13 @@ window.addEventListener('load', e => {
               <li class="text">
                 - hibiyasleep
               </li>
-              <li class="button" data-button="donate">
+              <!-- <li class="button" data-button="donate">
                 <label data-locale="ui.menu.donate">기부</label>
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
                      viewBox="0 0 24 24" class="icon">
                   <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z" />
                 </svg>
-              </li>
+              </li> -->
               <li class="button" data-button="settings">
                 <label data-locale="ui.menu.settings">설정</label>
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
@@ -314,6 +314,9 @@ window.addEventListener('load', e => {
             </ul>
           </li>
           <li id="patchnote">
+            <h3> 0.8.5_c1 - 2021/04/15 </h3>
+            <p> - adds columns for medicated count and simulated FFLogs parses </p>
+            <br />
             <h3> 0.8.5 'phantasmagoria' - 2020/12/07 </h3>
             <p> - fixes OBS config bug </p>
             <br />
