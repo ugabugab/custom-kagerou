@@ -272,7 +272,7 @@
       "per_second": ["HPS", "per Second"],
       "pct": ["H%", "Heal %"],
       "total": ["H.Tot", "Total"],
-      "over": ["OvH%", "Overheal"],
+      "over": ["OH%", "Overheal"],
       "swing": ["Swing", "Swings"],
       "critical": ["HCrit", "Critical%"],
       "cure": ["Cure", "Cures"],
@@ -286,10 +286,13 @@
       "powerheal": ["PHeal", "Powerheal"],
       "death": ["<i class='fas fa-skull-crossbones'></i>", "Deathcount"],
       "medicated": ["<i class='fas fa-flask'></i>", "Medicatedcount"],
+      "pdps": ["DPS", "Simulated FFLogs DPS"],
       "rdps": ["rDPS", "Simulated FFLogs rDPS"],
       "adps": ["aDPS", "Simulated FFLogs aDPS"],
       "rperf": ["P%", "Simulated FFLogs rDPS Parse %"],
-      "aperf": ["P%", "Simulated FFLogs aDPS Parse %"]
+      "aperf": ["P%", "Simulated FFLogs aDPS Parse %"],
+      "phps": ["HPS", "Simulated FFLogs HPS"],
+      "hperf": ["P%", "Simulated FFLogs HPS Parse %"]
     }
   },
   "zone": {

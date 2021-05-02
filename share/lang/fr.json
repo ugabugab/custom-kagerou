@@ -286,10 +286,13 @@
       "powerheal": ["PHeal", "Puissance de soin"],
       "death": ["<i class='fas fa-skull-crossbones'></i>", "Nombre de mort"],
       "medicated": ["<i class='fas fa-flask'></i>", "Medicatedcount"],
+      "pdps": ["DPS", "Simulated FFLogs DPS"],
       "rdps": ["rDPS", "Simulated FFLogs rDPS"],
       "adps": ["aDPS", "Simulated FFLogs aDPS"],
       "rperf": ["P%", "Simulated FFLogs rDPS Parse %"],
-      "aperf": ["P%", "Simulated FFLogs aDPS Parse %"]
+      "aperf": ["P%", "Simulated FFLogs aDPS Parse %"],
+      "phps": ["HPS", "Simulated FFLogs HPS"],
+      "hperf": ["P%", "Simulated FFLogs HPS Parse %"]
     }
   },
   "zone": {

@@ -60,10 +60,13 @@
 .flex-column-etc-death          { width: var(--_etc-death)rem; }
 .flex-column-etc-powerheal      { width: var(--_etc-powerheal)rem; }
 .flex-column-etc-medicated      { width: var(--_etc-medicated)rem; }
+.flex-column-etc-pdps           { width: var(--_etc-pdps)rem; }
 .flex-column-etc-rdps           { width: var(--_etc-rdps)rem; }
 .flex-column-etc-adps           { width: var(--_etc-adps)rem; }
 .flex-column-etc-rperf          { width: var(--_etc-rperf)rem; }
 .flex-column-etc-aperf          { width: var(--_etc-aperf)rem; }
+.flex-column-etc-phps           { width: var(--_etc-phps)rem; }
+.flex-column-etc-hperf          { width: var(--_etc-hperf)rem; }
 
 .pet-merged .flex-column-i-owner {
   display: none !important;

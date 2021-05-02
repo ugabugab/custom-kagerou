@@ -91,6 +91,7 @@ const CONFIG_DEFAULT = {
       width: 1,
       sort: 'heal.total',
       col: [
+        'etc.hperf',
         'i.icon',
         'i.name',
         'heal.pct',
@@ -145,7 +146,7 @@ const CONFIG_DEFAULT = {
     '_heal-per_second': 3,
     '_heal-pct': 2,
     '_heal-total': 4,
-    '_heal-swing': 2,
+    '_heal-swing': 3,
     '_heal-over': 2,
     '_heal-cure': 2,
     '_heal-max': 2.5,
@@ -155,10 +156,13 @@ const CONFIG_DEFAULT = {
     '_etc-powerheal': 4,
     '_etc-death':  1.5,
     '_etc-medicated': 1.5,
+    '_etc-pdps': 3.5,
     '_etc-rdps': 3.5,
     '_etc-adps': 3.5,
     '_etc-aperf': 1.5,
     '_etc-rperf': 1.5,
+    '_etc-phps': 3.5,
+    '_etc-hperf': 1.5,
   },
   color: {
     'gauge-default': '#444',
@@ -552,6 +556,14 @@ const COLUMN_INDEX = {
     powerheal: 'powerheal',
     death: 'deaths',
     medicated: 'MedicatedCount',
+    pdps: {
+      v: 'pdps',
+      f: (_, conf) => {
+        _ = pFloat(_)
+        if(isNaN(_)) return '---'
+        return formatDps(_, +conf.format.significant_digit.dps)
+      }
+    },
     rdps: {
       v: 'rdps',
       f: (_, conf) => {
@@ -588,6 +600,22 @@ const COLUMN_INDEX = {
     },
     aperf: {
       v: 'aPerf',
+      f: (_, conf) => {
+        _ = parseInt(_)
+        if(isNaN(_)) return '-'
+        return '<span style="color:' + pColor(_) + ';">' + _ + "</span>"
+      }
+    },
+    phps: {
+      v: 'phps',
+      f: (_, conf) => {
+        _ = pFloat(_)
+        if(isNaN(_)) return '---'
+        return formatDps(_, +conf.format.significant_digit.dps)
+      }
+    },
+    hperf: {
+      v: 'hPerf',
       f: (_, conf) => {
         _ = parseInt(_)
         if(isNaN(_)) return '-'
