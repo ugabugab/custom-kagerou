@@ -235,20 +235,16 @@
         } else {
           text = this._value(col.v, data)
 
-          if(typeof col.f === 'function')
+          if(typeof col.f === 'function') {
             text = col.f(text, window.config.get())
+          }
+
+          if(typeof col.t === 'function') {
+            tip = col.t(data)
+          }
         }
         if(text == 0 || text === '0%' || text === '---') {
           classes += ' zero'
-        }
-
-        if(c === 'etc.rdps') {
-          tip = data['rDPSPortions']
-          tip = tip !== '' ? tip.split(' | ').join('\r\n') : 'N/A'
-        }
-        else if(c === 'etc.adps') {
-          tip = data['aDPSPortions']
-          tip = tip !== '' ? tip.split(' | ').join('\r\n') : 'N/A'
         }
       }
 

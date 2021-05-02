@@ -558,6 +558,11 @@ const COLUMN_INDEX = {
         _ = pFloat(_)
         if(isNaN(_)) return '---'
         return formatDps(_, +conf.format.significant_digit.dps)
+      },
+      t: (data) => {
+        let _ = data['rDPSPortions']
+        if(_ === undefined) return ''
+        return _ !== '' ? _.split(' | ').join('\r\n') : 'N/A'
       }
     },
     adps: {
@@ -566,6 +571,11 @@ const COLUMN_INDEX = {
         _ = pFloat(_)
         if(isNaN(_)) return '---'
         return formatDps(_, +conf.format.significant_digit.dps)
+      },
+      t: (data) => {
+        let _ = data['aDPSPortions']
+        if(_ === undefined) return ''
+        return _ !== '' ? _.split(' | ').join('\r\n') : 'N/A'
       }
     },
     rperf: {
